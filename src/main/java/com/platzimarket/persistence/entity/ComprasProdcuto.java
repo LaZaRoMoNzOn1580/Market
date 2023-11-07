@@ -1,8 +1,6 @@
 package com.platzimarket.persistence.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
@@ -17,6 +15,14 @@ public class ComprasProdcuto {
     private BigDecimal total;
 
     private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    private Compra compra;
+
+    @ManyToOne
+    @JoinColumn(name = "id_prodcuto", insertable = false, updatable = false)
+    private Producto producto;
 
     public ComprasProdcutoPK getId() {
         return id;
