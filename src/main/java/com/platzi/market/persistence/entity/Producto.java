@@ -1,9 +1,9 @@
-package com.platzimarket.persistence.entity;
+package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
-@Table(name= "productos")
+@Table(name = "productos")
 public class Producto {
 
     @Id
@@ -85,5 +85,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
